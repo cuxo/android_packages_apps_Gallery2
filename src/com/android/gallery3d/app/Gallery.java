@@ -22,7 +22,6 @@ import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -66,7 +65,6 @@ public final class Gallery extends AbstractGalleryActivity implements OnCancelLi
                     WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
         }
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         setContentView(R.layout.main);
 
         if (savedInstanceState != null) {

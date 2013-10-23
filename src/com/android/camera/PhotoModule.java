@@ -861,6 +861,12 @@ public class PhotoModule
                     // time before starting the preview.
                     mHandler.sendEmptyMessageDelayed(SETUP_PREVIEW, 300);
                 }
+            } else if (mIsImageCaptureIntent && Util.isZSLEnabled()) {
+                // In ZSL mode, the preview is not stopped, due to which the
+                // review mode (ImageCapture) doesn't show the captured frame.
+                // Hence stop the preview if ZSL mode is active so that the
+                // preview can be restarted using the onReviewRetakeClicked().
+                stopPreview();
             } else {
                 mFocusManager.resetTouchFocus();
                 setCameraState(IDLE);
@@ -1814,12 +1820,6 @@ public class PhotoModule
         if ("true".equals(vstabSupported)) {
             mParameters.set("video-stabilization", "false");
         }
-
-        // Enable face detection if needed
-        List<String> faceSupported = mParameters.getSupportedFaceDetectionModes();
-        if (faceSupported != null && faceSupported.contains("on")) {
-            mParameters.setFaceDetectionMode("on");
-        }
     }
 
     private void updateCameraParametersZoom() {
@@ -1920,6 +1920,7 @@ public class PhotoModule
         if (Util.isSupported(mSceneMode, mParameters.getSupportedSceneModes())) {
             if (!mParameters.getSceneMode().equals(mSceneMode)) {
                 mParameters.setSceneMode(mSceneMode);
+
                 // Setting scene mode will change the settings of flash mode,
                 // white balance, and focus mode. Here we read back the
                 // parameters, so we can know those settings.

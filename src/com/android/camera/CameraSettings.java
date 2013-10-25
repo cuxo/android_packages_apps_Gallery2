@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2009 The Android Open Source Project
+ * Copyright (C) 2013 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +56,7 @@ public class CameraSettings {
     public static final String KEY_PICTURE_SIZE = "pref_camera_picturesize_key";
     public static final String KEY_JPEG_QUALITY = "pref_camera_jpegquality_key";
     public static final String KEY_FOCUS_MODE = "pref_camera_focusmode_key";
+    public static final String KEY_FOCUS_TIME = "pref_camera_focustime_key";
     public static final String KEY_FLASH_MODE = "pref_camera_flashmode_key";
     public static final String KEY_VIDEOCAMERA_FLASH_MODE = "pref_camera_video_flashmode_key";
     public static final String KEY_WHITE_BALANCE = "pref_camera_whitebalance_key";
@@ -70,8 +72,17 @@ public class CameraSettings {
     public static final String KEY_PHOTOSPHERE_PICTURESIZE = "pref_photosphere_picturesize_key";
     public static final String KEY_STORAGE = "pref_camera_storage_key";
     public static final String KEY_VIDEO_HDR = "pref_camera_video_hdr_key";
+    public static final String KEY_POWER_SHUTTER = "pref_power_shutter";
+    public static final String KEY_ISO_MODE = "pref_camera_iso_key";
+    public static final String KEY_JPEG = "pref_camera_jpeg_key";
+    public static final String KEY_VIDEOCAMERA_JPEG = "pref_camera_video_jpeg_key";
+    public static final String KEY_COLOR_EFFECT = "pref_camera_coloreffect_key";
+    public static final String KEY_VIDEOCAMERA_COLOR_EFFECT = "pref_camera_video_coloreffect_key";
+    public static final String KEY_BURST_MODE = "pref_camera_burst_key";
 
     public static final String EXPOSURE_DEFAULT_VALUE = "0";
+    public static final String VALUE_ON = "on";
+    public static final String VALUE_OFF = "off";
 
     public static final int CURRENT_VERSION = 5;
     public static final int CURRENT_LOCAL_VERSION = 2;
@@ -181,6 +192,9 @@ public class CameraSettings {
         ListPreference cameraHdr = group.findPreference(KEY_CAMERA_HDR);
         ListPreference storage = group.findPreference(KEY_STORAGE);
         ListPreference videoHdr = group.findPreference(KEY_VIDEO_HDR);
+        ListPreference isoMode = group.findPreference(KEY_ISO_MODE);
+        ListPreference colorEffect = group.findPreference(KEY_COLOR_EFFECT);
+        ListPreference videoColorEffect = group.findPreference(KEY_VIDEOCAMERA_COLOR_EFFECT);
 
         // Since the screen could be loaded from different resources, we need
         // to check if the preference is available here
@@ -206,10 +220,9 @@ public class CameraSettings {
                     flashMode, mParameters.getSupportedFlashModes());
         }
         if (focusMode != null) {
-            if (!Util.isFocusAreaSupported(mParameters)) {
-                filterUnsupportedOptions(group,
-                        focusMode, mParameters.getSupportedFocusModes());
-            } else if (!mContext.getResources().getBoolean(R.bool.wantsFocusModes)) {
+            filterUnsupportedOptions(group,
+                    focusMode, mParameters.getSupportedFocusModes());
+            if (!mContext.getResources().getBoolean(R.bool.wantsFocusModes)) {
                 // Remove the focus mode if we can use tap-to-focus.
                 removePreference(group, focusMode.getKey());
             }
@@ -245,6 +258,18 @@ public class CameraSettings {
                 removePreference(group, videoHdr.getKey());
             }
             filterUnsupportedOptions(group, videoHdr, mParameters.getSupportedVideoHDRModes());
+        }
+        if (isoMode != null) {
+            filterUnsupportedOptions(group,
+                    isoMode, mParameters.getSupportedIsoValues());
+        }
+        if (colorEffect != null) {
+            filterUnsupportedOptions(group,
+                    colorEffect, mParameters.getSupportedColorEffects());
+        }
+        if (videoColorEffect != null) {
+            filterUnsupportedOptions(group,
+                    videoColorEffect, mParameters.getSupportedColorEffects());
         }
         if (storage != null) {
             buildStorage(group, storage);
@@ -453,7 +478,7 @@ public class CameraSettings {
         if (version == 2) {
             editor.putString(KEY_RECORD_LOCATION,
                     pref.getBoolean(KEY_RECORD_LOCATION, false)
-                    ? RecordLocationPreference.VALUE_ON
+                    ? CameraSettings.VALUE_ON
                     : RecordLocationPreference.VALUE_NONE);
             version = 3;
         }
@@ -531,6 +556,16 @@ public class CameraSettings {
     public static void resetSceneMode(Parameters params) {
         if (params.getSupportedSceneModes() != null) {
             params.setSceneMode(Parameters.SCENE_MODE_AUTO);
+        }
+    }
+
+    public static void enableSceneDetection(Parameters params) {
+        if (Util.isSupported(Parameters.SCENE_DETECT_ON, params.getSupportedSceneDetectModes())) {
+            if (Parameters.SCENE_MODE_ASD.equals(params.getSceneMode())) {
+                params.setSceneDetectMode(Parameters.SCENE_DETECT_ON);
+            } else {
+                params.setSceneDetectMode(Parameters.SCENE_DETECT_OFF);
+            }
         }
     }
 

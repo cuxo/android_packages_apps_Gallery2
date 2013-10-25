@@ -90,4 +90,158 @@
 
     <!-- Video HDR default value -->
     <string name="pref_camera_video_hdr_default" translatable="false">off</string>
+
+    <!-- Settings screen, scene mode -->
+    <string name="pref_camera_scenemode_entry_antimotionblur">Motion blur reduction</string>
+    <string name="pref_camera_scenemode_entry_aqua">Aqua</string>
+    <string name="pref_camera_scenemode_entry_ar">Augmented reality</string>
+    <string name="pref_camera_scenemode_entry_asd">Best shot</string>
+    <string name="pref_camera_scenemode_entry_baby">Baby</string>
+    <string name="pref_camera_scenemode_entry_backgroundblur">Background blur</string>
+    <string name="pref_camera_scenemode_entry_backlight">Backlight</string>
+    <string name="pref_camera_scenemode_entry_backlightportrait">Backlight portrait</string>
+    <string name="pref_camera_scenemode_entry_barcode">Barcode</string>
+    <string name="pref_camera_scenemode_entry_beach">Beach</string>
+    <string name="pref_camera_scenemode_entry_beauty">Beauty</string>
+    <string name="pref_camera_scenemode_entry_candlelight">Candlelight</string>
+    <string name="pref_camera_scenemode_entry_cine">Cine</string>
+    <string name="pref_camera_scenemode_entry_closeup">Closeup</string>
+    <string name="pref_camera_scenemode_entry_dark">Dark</string>
+    <string name="pref_camera_scenemode_entry_dish">Dish</string>
+    <string name="pref_camera_scenemode_entry_duskdawn">Duskdawn</string>
+    <string name="pref_camera_scenemode_entry_document">Document</string>
+    <string name="pref_camera_scenemode_entry_fallcolor">Fallcolor</string>
+    <string name="pref_camera_scenemode_entry_fireworks">Fireworks</string>
+    <string name="pref_camera_scenemode_entry_flowers">Flowers</string>
+    <string name="pref_camera_scenemode_entry_handheldtwilight">Handheld twilight</string>
+    <string name="pref_camera_scenemode_entry_highsensitivity">High sensivity</string>
+    <string name="pref_camera_scenemode_entry_indoor">Indoor</string>
+    <string name="pref_camera_scenemode_entry_landscape">Landscape</string>
+    <string name="pref_camera_scenemode_entry_mix_illuminant">Mixed lighting</string>
+    <string name="pref_camera_scenemode_entry_mood">Mood</string>
+    <string name="pref_camera_scenemode_entry_nightportrait">Night portrait</string>
+    <string name="pref_camera_scenemode_entry_nightindoor">Night indoor</string>
+    <string name="pref_camera_scenemode_entry_oldfilm">Old film</string>
+    <string name="pref_camera_scenemode_entry_pet">Pet</string>
+    <string name="pref_camera_scenemode_entry_portrait">Portrait</string>
+    <string name="pref_camera_scenemode_entry_snow">Snow</string>
+    <string name="pref_camera_scenemode_entry_softskin">Soft skin</string>
+    <string name="pref_camera_scenemode_entry_sports">Sports</string>
+    <string name="pref_camera_scenemode_entry_spotlight">Spotlight</string>
+    <string name="pref_camera_scenemode_entry_steadyphoto">Steady photo</string>
+    <string name="pref_camera_scenemode_entry_supernight">Dark night</string>
+    <string name="pref_camera_scenemode_entry_sweepstitch">Sweep stitch</string>
+    <string name="pref_camera_scenemode_entry_text">Text</string>
+    <string name="pref_camera_scenemode_entry_theatre">Theatre</string>
+    <string name="pref_camera_scenemode_entry_whiteboard">Whiteboard</string>
+
+    <!-- Settings screen, focus mode -->
+    <string name="pref_camera_focusmode_entry_continuouspicture">Continuous picture</string>
+    <string name="pref_camera_focusmode_entry_extended">Extended</string>
+    <string name="pref_camera_focusmode_entry_facedetect">Face detect</string>
+    <string name="pref_camera_focusmode_entry_facepriority">Face priority</string>
+    <string name="pref_camera_focusmode_entry_fixed">Fixed</string>
+    <string name="pref_camera_focusmode_entry_portrait">Portrait</string>
+    <string name="pref_camera_focusmode_entry_hyperfocal">Hyperfocal</string>
+
+    <!-- More Settings screen, power button title -->
+    <string name="pref_camera_power_shutter_title">Power shutter</string>
+    <string name="pref_camera_power_shutter_default" translatable="false">off</string>
+
+    <!-- Settings screen, ISO -->
+    <string name="pref_camera_iso_title" translatable="false">ISO</string>
+    <string name="pref_camera_iso_default" translatable="false">auto</string>
+
+    <!-- Settings screen, ISO dialog choices -->
+    <string name="pref_camera_iso_entry_auto">Auto</string>
+    <string name="pref_camera_iso_entry_isodeblur">Auto (HJR)</string>
+    <string name="pref_camera_iso_entry_isosports">Sports</string>
+    <string name="pref_camera_iso_entry_isonight">Night</string>
+    <string name="pref_camera_iso_entry_isomovie">Movie</string>
+    <string name="pref_camera_iso_entry_iso6400" translatable="false">6400</string>
+    <string name="pref_camera_iso_entry_iso3200" translatable="false">3200</string>
+    <string name="pref_camera_iso_entry_iso2500" translatable="false">2500</string>
+    <string name="pref_camera_iso_entry_iso2000" translatable="false">2000</string>
+    <string name="pref_camera_iso_entry_iso1600" translatable="false">1600</string>
+    <string name="pref_camera_iso_entry_iso1250" translatable="false">1250</string>
+    <string name="pref_camera_iso_entry_iso1200" translatable="false">1200</string>
+    <string name="pref_camera_iso_entry_iso1000" translatable="false">1000</string>
+    <string name="pref_camera_iso_entry_iso800" translatable="false">800</string>
+    <string name="pref_camera_iso_entry_iso640" translatable="false">640</string>
+    <string name="pref_camera_iso_entry_iso500" translatable="false">500</string>
+    <string name="pref_camera_iso_entry_iso400" translatable="false">400</string>
+    <string name="pref_camera_iso_entry_iso320" translatable="false">320</string>
+    <string name="pref_camera_iso_entry_iso250" translatable="false">250</string>
+    <string name="pref_camera_iso_entry_iso200" translatable="false">200</string>
+    <string name="pref_camera_iso_entry_iso160" translatable="false">160</string>
+    <string name="pref_camera_iso_entry_iso125" translatable="false">125</string>
+    <string name="pref_camera_iso_entry_iso100" translatable="false">100</string>
+    <string name="pref_camera_iso_entry_iso50" translatable="false">50</string>
+
+    <!-- Settings screen, JPEG Quality -->
+    <string name="pref_camera_jpeg_title">JPEG quality</string>
+    <string name="pref_video_jpeg_title">Encoding quality</string>
+    <string name="pref_camera_jpeg_default" translatable="false">90</string>
+
+    <!-- Settings screen, JPEG dialog choices -->
+    <string name="pref_camera_jpeg_entry_super">Super</string>
+    <string name="pref_camera_jpeg_entry_high">High</string>
+    <string name="pref_camera_jpeg_entry_medium">Medium</string>
+    <string name="pref_camera_jpeg_entry_low">Low</string>
+
+    <!-- Settings screen, Select Color effect title -->
+    <string name="pref_camera_coloreffect_title">Color effect</string>
+    <string name="pref_camera_coloreffect_default" translatable="false">none</string>
+
+    <!-- Settings screen, Color effect dialog choices -->
+    <string name="pref_camera_coloreffect_entry_none">None</string>
+    <string name="pref_camera_coloreffect_entry_mono">Mono</string>
+    <string name="pref_camera_coloreffect_entry_sepia">Sepia</string>
+    <string name="pref_camera_coloreffect_entry_negative">Negative</string>
+    <string name="pref_camera_coloreffect_entry_solarize">Solarize</string>
+    <string name="pref_camera_coloreffect_entry_posterize">Posterize</string>
+    <string name="pref_camera_coloreffect_entry_aqua">Aqua</string>
+    <string name="pref_camera_coloreffect_entry_emboss">Emboss</string>
+    <string name="pref_camera_coloreffect_entry_sketch">Sketch</string>
+    <string name="pref_camera_coloreffect_entry_neon">Neon</string>
+    <string name="pref_camera_coloreffect_entry_pastel">Pastel</string>
+    <string name="pref_camera_coloreffect_entry_mosaic">Mosaic</string>
+    <string name="pref_camera_coloreffect_entry_redtint">Red tint</string>
+    <string name="pref_camera_coloreffect_entry_bluetint">Blue tint</string>
+    <string name="pref_camera_coloreffect_entry_greentint">Green tint</string>
+    <string name="pref_camera_coloreffect_entry_washed">Washed</string>
+    <string name="pref_camera_coloreffect_entry_vintage_warm">Vintage warm</string>
+    <string name="pref_camera_coloreffect_entry_vintage_cold">Vintage cold</string>
+    <string name="pref_camera_coloreffect_entry_point_blue">Point blue</string>
+    <string name="pref_camera_coloreffect_entry_point_green">Point green</string>
+    <string name="pref_camera_coloreffect_entry_point_red_yellow">Point red-yellow</string>
+    <string name="pref_camera_coloreffect_entry_cartoonize">Cartoonize</string>
+
+    <!-- Settings screen, Burst mode title -->
+    <string name="pref_camera_burst_title">Burst mode</string>
+    <string name="pref_camera_burst_default" translatable="false">1</string>
+
+    <!-- Settings screen, Burst mode entries -->
+    <string name="pref_camera_burst_entry_off">Off</string>
+    <string name="pref_camera_burst_entry_5">5 shots</string>
+    <string name="pref_camera_burst_entry_10">10 shots</string>
+    <string name="pref_camera_burst_entry_15">15 shots</string>
+    <string name="pref_camera_burst_entry_20">20 shots</string>
+
+    <!-- Touch-to-focus duration settings -->
+    <string name="pref_camera_focustime_title">Touch focus duration</string>
+    <string name="pref_camera_focustime_summary">Select duration for touch focus</string>
+    <string name="pref_camera_focustime_default" translatable="false">5000</string>
+
+    <!-- Settings screen, Timer mode entries -->
+    <string name="pref_camera_focustime_entry_5">5s</string>
+    <string name="pref_camera_focustime_entry_10">10s</string>
+    <string name="pref_camera_focustime_entry_15">15s</string>
+    <string name="pref_camera_focustime_entry_20">20s</string>
+    <string name="pref_camera_focustime_entry_30">30s</string>
+    <string name="pref_camera_focustime_entry_infinite">Infinite</string>
+
+    <!-- Red eye flash mode title -->
+    <string name="pref_camera_flashmode_entry_redeye">Red eye</string>
+    <string name="pref_camera_flashmode_label_redeye">RED EYE</string>
 </resources>
